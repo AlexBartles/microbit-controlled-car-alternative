@@ -1,12 +1,30 @@
 input.onButtonPressed(Button.A, function () {
-    wuKong.setAllMotor(-80, 0)
+    wuKong.setAllMotor(-100, -100)
+    basic.showLeds(`
+        . # # # .
+        . . # . .
+        . . # . .
+        . . # . .
+        . . # . .
+        `)
 })
 input.onButtonPressed(Button.B, function () {
-    wuKong.setAllMotor(-100, -100)
-})
-input.onGesture(Gesture.Shake, function () {
     wuKong.setAllMotor(100, 100)
+    basic.showLeds(`
+        . . # . .
+        . . # . .
+        . . # . .
+        . . # . .
+        . # # # .
+        `)
 })
 bluetooth.startLEDService()
 wuKong.setAllMotor(0, 0)
 wuKong.setLightMode(wuKong.LightMode.BREATH)
+basic.showLeds(`
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    `)
